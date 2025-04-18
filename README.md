@@ -1,6 +1,10 @@
 # Movie Recommendation System Using Machine Learning
 
 A web application that recommends movies based on user selection using machine learning algorithms. The system features a stylish interface with Greek-inspired typography and a responsive design.
+It uses the backend from my github repo, check it to understand the backend of this app
+```
+https://github.com/NtwariMike-CK/Movie-Recommendation-App-Backend.git
+```
 
 
 ## Features
@@ -24,16 +28,14 @@ A web application that recommends movies based on user selection using machine l
 - Node.js (v14 or later)
 - npm or yarn package manager
 - FastApi
-- Dotenv
-- 
 - Backend API endpoint (configured in environment variables)
 
 ### Installation
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/movie-recommendation-system.git
-   cd movie-recommendation-system
+   git clone https://github.com/NtwariMike-CK/Movie-Recommendation-App-Frontend.git
+   cd Movie-Recommendation-App-Frontend
    ```
 
 2. Install dependencies:
@@ -45,7 +47,7 @@ A web application that recommends movies based on user selection using machine l
 
 3. Create a `.env.local` file in the root directory and add your backend URL:
    ```
-   NEXT_PUBLIC_BACKEND_URL=https://your-api-endpoint.com
+   NEXT_PUBLIC_BACKEND_URL=https://your-api-endpoint.com](https://my-movie-recommender-blo9.onrender.com
    ```
 
 4. Run the development server:
@@ -79,7 +81,7 @@ movie-recommendation-system/
 1. Open the application in your web browser
 2. Click on the dropdown menu to select a movie or start typing to search
 3. Choose a movie from the list
-4. Click the "Προτάσεις Ταινιών" (Movie Recommendations) button
+4. Click the "Show Recommendation" (Movie Recommendations) button
 5. Browse through the horizontally scrollable list of recommended movies
 
 ## Frontend Component Details
@@ -87,7 +89,6 @@ movie-recommendation-system/
 ### Home Page (index.tsx)
 
 The main page features:
-- Greek-inspired typography with imported Google Fonts
 - Interactive movie selection dropdown with search functionality
 - Movie recommendations display section
 - Click-outside detection to close the dropdown when clicking elsewhere
