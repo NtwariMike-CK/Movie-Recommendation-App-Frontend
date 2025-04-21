@@ -5,14 +5,14 @@ import MovieSection from './../components/recommendemovies';
 
 // Define Movie interface that's compatible with MovieSection component
 interface Movie {
-  id: number;
+  id?: number;      // For recommendations API
+  movie_id?: number; // For all movies API
   title: string;
-  image?: string; // Required by MovieSection
-  overview?: string;
-  release_date?: string;
-  vote_average?: number;
-  poster_path?: string;
-  // [key: string]: any;
+  poster_path: string;
+  overview: string;
+  release_date: string;
+  vote_average: number;
+  genres: string[];
 }
 
 export default function Home() {
@@ -90,11 +90,10 @@ export default function Home() {
     
     try {
       const apiUrl = process.env.NEXT_PUBLIC_BACKEND_URL;
-      const response = await fetch(`${apiUrl}/recommendations/${selectedMovie.id}`);
+      const response = await fetch(`${apiUrl}/recommendations/${selectedMovie.movie_id}`);
       
       if (!response.ok) throw new Error('Failed to fetch recommendations');
       const data = await response.json();
-      alert(data[0]); // Check if id exists
       
       // Transform data to include 'image' property required by MovieSection
       const formattedRecommendations = data.map((movie: 
@@ -162,9 +161,9 @@ export default function Home() {
                 {loading ? (
                   <div className="px-4 py-2 text-white greek-font text-left">Loading movies...</div>
                 ) : filteredMovies.length > 0 ? (
-                  filteredMovies.map((movie) => (
+                  filteredMovies.map((movie, index) => (
                     <div 
-                      key={movie.id}
+                      key={index}
                       className="px-4 py-2 hover:bg-gray-800 cursor-pointer text-white greek-font text-left"
                       onClick={() => handleSelectMovie(movie)}
                     >
