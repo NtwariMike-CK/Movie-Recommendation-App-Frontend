@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Gfs+Didot&family=Gfs+Neohellenic&display=swap');
+        
+.greek-font {
+  font-family: 'Gfs Didot', serif;
+}
+
+.greek-font-title {
+  font-family: 'Gfs Neohellenic', sans-serif;
+  letter-spacing: 0.05em;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
