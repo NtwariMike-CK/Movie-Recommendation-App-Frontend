@@ -10,14 +10,15 @@ import "../styles/scrollbar.css";
 // }
 
 interface Movie {
-  id: number;
+  id?: number;      // For recommendations API
+  movie_id?: number; // For all movies API
   title: string;
   image?: string; // Required by MovieSection
+  poster_path: string;
   overview?: string;
   release_date?: string;
   vote_average?: number;
-  poster_path?: string;
-  // [key: string]: any;
+  genres?: string[];
 }
 
 interface MovieSectionProps {
@@ -62,10 +63,12 @@ export default function MovieSection({ movies }: MovieSectionProps) {
               style={{ width: '180px' }} // Fixed width
             >
               <div className="h-64 bg-gray-800 relative"> {/* Fixed height */}
-                {movie.image ? (
+                {movie.image? (
                   <Image
                     src={movie.image} 
                     alt={movie.title}
+                    width={180}
+                    height={256}
                     className="w-full h-full object-cover"
                   />
                 ) : (
