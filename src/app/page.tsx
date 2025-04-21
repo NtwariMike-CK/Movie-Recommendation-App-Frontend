@@ -94,6 +94,7 @@ export default function Home() {
       
       if (!response.ok) throw new Error('Failed to fetch recommendations');
       const data = await response.json();
+      console.log("First movie from API:", data[0]); // Check if id exists
       
       // Transform data to include 'image' property required by MovieSection
       const formattedRecommendations = data.map((movie: 
