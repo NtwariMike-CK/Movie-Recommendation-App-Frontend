@@ -30,7 +30,7 @@ export default function Home() {
   useEffect(() => {
     const fetchMovies = async () => {
       try {
-        const apiUrl = process.env.NEXT_PUBLIC_BACKEND_URL;
+        const apiUrl = "https://my-movie-recommender-blo9.onrender.com";
         const response = await fetch(`${apiUrl}/movies`);
         
         if (!response.ok) throw new Error("Failed to fetch movies");
@@ -89,7 +89,7 @@ export default function Home() {
     setRecommendationsLoading(true);
     
     try {
-      const apiUrl = process.env.NEXT_PUBLIC_BACKEND_URL;
+      const apiUrl = "https://my-movie-recommender-blo9.onrender.com";
       const response = await fetch(`${apiUrl}/recommendations/${selectedMovie.movie_id}`);
       
       if (!response.ok) throw new Error('Failed to fetch recommendations');
